@@ -10,7 +10,6 @@
 		5581CACC297752F90071613F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5581CACB297752F90071613F /* AppDelegate.swift */; };
 		5581CACE297752F90071613F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5581CACD297752F90071613F /* SceneDelegate.swift */; };
 		5581CAD0297752F90071613F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5581CACF297752F90071613F /* ViewController.swift */; };
-		5581CAD3297752F90071613F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5581CAD1297752F90071613F /* Main.storyboard */; };
 		5581CAD6297752F90071613F /* MobileChallenge01.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5581CAD4297752F90071613F /* MobileChallenge01.xcdatamodeld */; };
 		5581CAD8297752FA0071613F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5581CAD7297752FA0071613F /* Assets.xcassets */; };
 		5581CADB297752FA0071613F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5581CAD9297752FA0071613F /* LaunchScreen.storyboard */; };
@@ -41,7 +40,6 @@
 		5581CACB297752F90071613F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5581CACD297752F90071613F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5581CACF297752F90071613F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5581CAD2297752F90071613F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5581CAD5297752F90071613F /* MobileChallenge01.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MobileChallenge01.xcdatamodel; sourceTree = "<group>"; };
 		5581CAD7297752FA0071613F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5581CADA297752FA0071613F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,14 +99,12 @@
 		5581CACA297752F90071613F /* MobileChallenge01 */ = {
 			isa = PBXGroup;
 			children = (
-				5581CACB297752F90071613F /* AppDelegate.swift */,
-				5581CACD297752F90071613F /* SceneDelegate.swift */,
-				5581CACF297752F90071613F /* ViewController.swift */,
-				5581CAD1297752F90071613F /* Main.storyboard */,
-				5581CAD7297752FA0071613F /* Assets.xcassets */,
-				5581CAD9297752FA0071613F /* LaunchScreen.storyboard */,
-				5581CADC297752FA0071613F /* Info.plist */,
-				5581CAD4297752F90071613F /* MobileChallenge01.xcdatamodeld */,
+				5581CB04297838920071613F /* Controller */,
+				5581CB01297838230071613F /* ViewModel */,
+				5581CB002978381B0071613F /* View */,
+				5581CAFF297838120071613F /* Model */,
+				5581CB03297838850071613F /* Services */,
+				5581CAFE297838000071613F /* Application */,
 			);
 			path = MobileChallenge01;
 			sourceTree = "<group>";
@@ -128,6 +124,71 @@
 				5581CAF1297752FA0071613F /* MobileChallenge01UITestsLaunchTests.swift */,
 			);
 			path = MobileChallenge01UITests;
+			sourceTree = "<group>";
+		};
+		5581CAFE297838000071613F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5581CAD9297752FA0071613F /* LaunchScreen.storyboard */,
+				5581CADC297752FA0071613F /* Info.plist */,
+				5581CAD7297752FA0071613F /* Assets.xcassets */,
+				5581CB022978383D0071613F /* Delegate */,
+				5581CB05297838E10071613F /* Storage */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		5581CAFF297838120071613F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5581CB002978381B0071613F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5581CB01297838230071613F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5581CB022978383D0071613F /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				5581CACB297752F90071613F /* AppDelegate.swift */,
+				5581CACD297752F90071613F /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		5581CB03297838850071613F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5581CB04297838920071613F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5581CACF297752F90071613F /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5581CB05297838E10071613F /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				5581CAD4297752F90071613F /* MobileChallenge01.xcdatamodeld */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +297,6 @@
 			files = (
 				5581CADB297752FA0071613F /* LaunchScreen.storyboard in Resources */,
 				5581CAD8297752FA0071613F /* Assets.xcassets in Resources */,
-				5581CAD3297752F90071613F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +361,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5581CAD1297752F90071613F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5581CAD2297752F90071613F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5581CAD9297752FA0071613F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -443,12 +495,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9VJNM48GB5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MobileChallenge01/Info.plist;
+				INFOPLIST_FILE = MobileChallenge01/Application/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Challenge BTG";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -477,12 +529,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9VJNM48GB5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MobileChallenge01/Info.plist;
+				INFOPLIST_FILE = MobileChallenge01/Application/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Challenge BTG";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
