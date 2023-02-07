@@ -23,14 +23,12 @@ final class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let tabBarController = UITabBarController()
-        
-        tabBarController.modalPresentationStyle = .fullScreen
-        
-        tabBarController.setViewControllers([], animated: false)
-        
         let viewController = MovieListViewController()
+        
         viewController.coordinator = self
-        navigationController.pushViewController(viewController, animated: false)
+        
+        viewController.modalPresentationStyle = .fullScreen
+        
+        navigationController.pushViewController(viewController, animated: true)
     }
 }
