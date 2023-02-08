@@ -7,14 +7,7 @@
 
 import UIKit
 
-protocol Coordinator {
-    var children: [Coordinator] { get set }
-    var navigationController: UINavigationController { get set }
-    
-    func start()
-}
-
-final class MainCoordinator: Coordinator {
+final class Coordinator {
     var children = [Coordinator]()
     var navigationController: UINavigationController
     
@@ -23,9 +16,13 @@ final class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let viewController = MovieListViewController()
+        let viewModel = MovieListViewModel()
+        
+        let viewController = MovieListViewController(viewModel: viewModel)
         
         viewController.coordinator = self
+        
+        viewController.title = "Popular Movies"
         
         viewController.modalPresentationStyle = .fullScreen
         
