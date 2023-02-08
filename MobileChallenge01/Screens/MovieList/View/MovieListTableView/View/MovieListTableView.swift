@@ -9,6 +9,8 @@ import UIKit
 
 class MovieListTableView: UITableView {
     
+    var constraintDelegate: UITableViewConstraintDelegate?
+    
     init() {
         super.init(frame: CGRect(), style: .plain)
         
@@ -18,16 +20,11 @@ class MovieListTableView: UITableView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
     
-    func setConstraints(using view: UIView) {
-        NSLayoutConstraint.activate([
-            topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
-        ])
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        constraintDelegate?.didAddToSuperview()
     }
-    
 }
