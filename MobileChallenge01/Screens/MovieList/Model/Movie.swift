@@ -7,8 +7,11 @@
 
 import UIKit.UIImage
 
-struct Movie: Decodable {
-    let poster_path: String?
-    let title: String?
-    let release_date: String?
+struct Movie {
+    let poster: UIImage?
+    let title: String
+    let overview: String
+    let releaseDate: String
+    let popularity: Float
+    let genres: [String]
 }

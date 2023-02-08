@@ -7,6 +7,10 @@
 
 import Foundation
 
-struct MovieList: Decodable {
-    let results: [Movie]?
+struct MovieList {
+    let movies: [Movie]
+    
+    init(_ movieList: Movie...) {
+        self.movies = movieList.map { $0 }
+    }
 }
