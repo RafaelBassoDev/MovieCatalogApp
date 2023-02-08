@@ -17,12 +17,11 @@ class MovieListViewModel {
     ///   - completion: completion handler indicating the function has finished.
     func refreshListWithPopularMovies(_ completion: @escaping () -> Void) { // Adicionar error e message response da API
         self.model = MovieList(
-            results: [
-                Movie(poster_path: "", title: "Narnia", release_date: "1998"),
-                Movie(poster_path: "", title: "Avatar 2", release_date: "2023"),
-                Movie(poster_path: "", title: "Onde os fracos não tem vez", release_date: "2003")
-            ]
+            Movie(poster: nil, title: "Narnia", overview: "", releaseDate: "1998", popularity: 8.7, genres: []),
+            Movie(poster: nil, title: "Avatar 2", overview: "", releaseDate: "2022", popularity: 8.7, genres: []),
+            Movie(poster: nil, title: "Onde os fracos não tem vez", overview: "", releaseDate: "2003", popularity: 8.7, genres: [])
         )
+        
         completion()
     }
     
@@ -33,17 +32,26 @@ class MovieListViewModel {
     ///   - completion: completion handler indicating the function has finished.
     func searchForTitles(containing inputStream: String, _ completion: @escaping () -> Void) {
         self.model = MovieList(
-            results: [
-                Movie(poster_path: "", title: "Jumanji", release_date: "2001"),
-                Movie(poster_path: "", title: "Expresso do amanha", release_date: "2006")
-            ]
+            Movie(poster: nil, title: "Avatar 2", overview: "", releaseDate: "2022", popularity: 8.7, genres: []),
+            Movie(poster: nil, title: "Narnia", overview: "", releaseDate: "2015", popularity: 8.7, genres: [])
         )
+
         completion()
     }
     
-    func getImageFor(path: String?) -> UIImage? {
-        // get image from API
-        return UIImage(named: "no-image-placeholder")
+    func getMovieCount() -> Int {
+        guard let movieArray = model?.movies else {
+            return 0
+        }
+        
+        return movieArray.count
     }
     
+    func getMovieData(for indexPath: IndexPath) -> Movie? {
+        guard let movieDetail = model?.movies[indexPath.row] else {
+            return nil
+        }
+        
+        return movieDetail
+    }
 }
