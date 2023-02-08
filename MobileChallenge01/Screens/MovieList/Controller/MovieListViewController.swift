@@ -9,50 +9,47 @@ import UIKit
 
 class MovieListViewController: UIViewController {
     
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: Coordinator?
     
-    let viewModel = MovieListViewModel()
+    var viewModel: MovieListViewModel!
     
-    let movieListView = UITableView()
+    var tableViewController: MovieListTableViewController!
+    
+    init(viewModel: MovieListViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        self.viewModel = MovieListViewModel()
+        super.init(coder: coder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.addSubview(movieListView)
+        self.tableViewController = MovieListTableViewController(self)
         
-        movieListView.delegate = self
-        movieListView.dataSource = self
-        
-        setMovieListViewConstraints()
-        
-        movieListView.register(MovieListTableViewCell.self, forCellReuseIdentifier: MovieListTableViewCell.reuseIdentifier)
+        view.addSubview(tableViewController.view)
         
         viewModel.refreshListWithPopularMovies { [weak self] in
             DispatchQueue.main.async {
-                self?.movieListView.reloadData()
+                self?.tableViewController.reloadData()
             }
         }
-    }
-    
-    func setMovieListViewConstraints() {
-        movieListView.translatesAutoresizingMaskIntoConstraints = false
-        movieListView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        movieListView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        movieListView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        movieListView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
     
 }
 
 extension MovieListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Clicked on table view cell
+        
     }
 }
 
 extension MovieListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.model?.results?.count ?? 0
+        viewModel.getMovieCount()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -65,15 +62,13 @@ extension MovieListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        guard let movieList = viewModel.model?.results else {
+        guard let movieModel = viewModel.getMovieData(for: indexPath) else {
             return movieCell
         }
         
-        let movieModel = movieList[indexPath.row]
-        
-        movieCell.setPoster(viewModel.getImageFor(path: movieModel.poster_path))
+        movieCell.setPoster(movieModel.poster)
         movieCell.setTitle(movieModel.title)
-        movieCell.setReleaseDate(movieModel.release_date)
+        movieCell.setReleaseDate(movieModel.releaseDate)
         
         return movieCell
     }
