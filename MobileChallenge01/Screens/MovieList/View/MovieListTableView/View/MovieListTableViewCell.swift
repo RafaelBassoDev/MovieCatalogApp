@@ -54,6 +54,11 @@ class MovieListTableViewCell: UITableViewCell {
     }
 
     func setPoster(_ image: UIImage?) {
+        guard let image else {
+            self.poster.image = UIImage(named: "no-image-placeholder")
+            return
+        }
+        
         self.poster.image = image
     }
     

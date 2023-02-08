@@ -21,6 +21,10 @@
 		5581CAE6297752FA0071613F /* MobileChallenge01Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5581CAE5297752FA0071613F /* MobileChallenge01Tests.swift */; };
 		5581CAF0297752FA0071613F /* MobileChallenge01UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5581CAEF297752FA0071613F /* MobileChallenge01UITests.swift */; };
 		5581CAF2297752FA0071613F /* MobileChallenge01UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5581CAF1297752FA0071613F /* MobileChallenge01UITestsLaunchTests.swift */; };
+		55FA31AA29942A37006B3971 /* MovieListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA31A929942A37006B3971 /* MovieListTableView.swift */; };
+		55FA31AE29942FDD006B3971 /* MovieListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA31AD29942FDD006B3971 /* MovieListTableViewController.swift */; };
+		55FA31B129943584006B3971 /* UITableViewConstraintDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA31B029943584006B3971 /* UITableViewConstraintDelegate.swift */; };
+		55FA31B5299437C6006B3971 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA31B4299437C6006B3971 /* UINavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,10 @@
 		5581CAEB297752FA0071613F /* MobileChallenge01UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileChallenge01UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5581CAEF297752FA0071613F /* MobileChallenge01UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileChallenge01UITests.swift; sourceTree = "<group>"; };
 		5581CAF1297752FA0071613F /* MobileChallenge01UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileChallenge01UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		55FA31A929942A37006B3971 /* MovieListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableView.swift; sourceTree = "<group>"; };
+		55FA31AD29942FDD006B3971 /* MovieListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableViewController.swift; sourceTree = "<group>"; };
+		55FA31B029943584006B3971 /* UITableViewConstraintDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewConstraintDelegate.swift; sourceTree = "<group>"; };
+		55FA31B4299437C6006B3971 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +105,7 @@
 		553E357A299192A9004D9F17 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				553E358B29929FCC004D9F17 /* MovieListTableViewCell.swift */,
+				55FA31AB29942FB0006B3971 /* MovieListTableView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -161,6 +169,7 @@
 		5581CACA297752F90071613F /* MobileChallenge01 */ = {
 			isa = PBXGroup;
 			children = (
+				55FA31B3299437B2006B3971 /* Extensions */,
 				553E357C299192BB004D9F17 /* Services */,
 				553E3589299299D7004D9F17 /* Screens */,
 				5581CAFE297838000071613F /* Application */,
@@ -220,6 +229,49 @@
 				5581CAD4297752F90071613F /* MobileChallenge01.xcdatamodeld */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		55FA31AB29942FB0006B3971 /* MovieListTableView */ = {
+			isa = PBXGroup;
+			children = (
+				55FA31B22994364E006B3971 /* Delegate */,
+				55FA31AF2994300A006B3971 /* View */,
+				55FA31AC29942FC1006B3971 /* Controller */,
+			);
+			path = MovieListTableView;
+			sourceTree = "<group>";
+		};
+		55FA31AC29942FC1006B3971 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				55FA31AD29942FDD006B3971 /* MovieListTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		55FA31AF2994300A006B3971 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				553E358B29929FCC004D9F17 /* MovieListTableViewCell.swift */,
+				55FA31A929942A37006B3971 /* MovieListTableView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		55FA31B22994364E006B3971 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				55FA31B029943584006B3971 /* UITableViewConstraintDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		55FA31B3299437B2006B3971 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				55FA31B4299437C6006B3971 /* UINavigationController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,12 +429,16 @@
 				5581CACC297752F90071613F /* AppDelegate.swift in Sources */,
 				553E357E299192D7004D9F17 /* Coordinator.swift in Sources */,
 				553E35822992884D004D9F17 /* Movie.swift in Sources */,
+				55FA31B129943584006B3971 /* UITableViewConstraintDelegate.swift in Sources */,
 				553E358629928EA2004D9F17 /* MovieListViewModel.swift in Sources */,
 				5581CAD6297752F90071613F /* MobileChallenge01.xcdatamodeld in Sources */,
+				55FA31B5299437C6006B3971 /* UINavigationController.swift in Sources */,
 				553E3580299196F9004D9F17 /* MovieListViewController.swift in Sources */,
 				5581CACE297752F90071613F /* SceneDelegate.swift in Sources */,
 				553E358C29929FCC004D9F17 /* MovieListTableViewCell.swift in Sources */,
+				55FA31AA29942A37006B3971 /* MovieListTableView.swift in Sources */,
 				553E358429928E64004D9F17 /* MovieList.swift in Sources */,
+				55FA31AE29942FDD006B3971 /* MovieListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
