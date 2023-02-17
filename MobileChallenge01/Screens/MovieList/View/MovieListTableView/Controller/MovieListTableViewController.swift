@@ -26,7 +26,7 @@ class MovieListTableViewController {
     
     func setConstraints(using view: UIView) {
         NSLayoutConstraint.activate([
-            self.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            self.view.topAnchor.constraint(equalTo: view.topAnchor),
             self.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             self.view.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             self.view.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
