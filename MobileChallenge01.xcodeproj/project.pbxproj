@@ -25,6 +25,7 @@
 		55FA31AE29942FDD006B3971 /* MovieListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA31AD29942FDD006B3971 /* MovieListTableViewController.swift */; };
 		55FA31B129943584006B3971 /* UITableViewConstraintDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA31B029943584006B3971 /* UITableViewConstraintDelegate.swift */; };
 		55FA31B5299437C6006B3971 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA31B4299437C6006B3971 /* UINavigationController.swift */; };
+		55FA31B7299FE886006B3971 /* CellIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA31B6299FE886006B3971 /* CellIdentifiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		55FA31AD29942FDD006B3971 /* MovieListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableViewController.swift; sourceTree = "<group>"; };
 		55FA31B029943584006B3971 /* UITableViewConstraintDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewConstraintDelegate.swift; sourceTree = "<group>"; };
 		55FA31B4299437C6006B3971 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		55FA31B6299FE886006B3971 /* CellIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellIdentifiable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 				55FA31B22994364E006B3971 /* Delegate */,
 				55FA31AF2994300A006B3971 /* View */,
 				55FA31AC29942FC1006B3971 /* Controller */,
+				55FA31B8299FE890006B3971 /* Protocol */,
 			);
 			path = MovieListTableView;
 			sourceTree = "<group>";
@@ -272,6 +275,14 @@
 				55FA31B4299437C6006B3971 /* UINavigationController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		55FA31B8299FE890006B3971 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				55FA31B6299FE886006B3971 /* CellIdentifiable.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,6 +440,7 @@
 				5581CACC297752F90071613F /* AppDelegate.swift in Sources */,
 				553E357E299192D7004D9F17 /* Coordinator.swift in Sources */,
 				553E35822992884D004D9F17 /* Movie.swift in Sources */,
+				55FA31B7299FE886006B3971 /* CellIdentifiable.swift in Sources */,
 				55FA31B129943584006B3971 /* UITableViewConstraintDelegate.swift in Sources */,
 				553E358629928EA2004D9F17 /* MovieListViewModel.swift in Sources */,
 				5581CAD6297752F90071613F /* MobileChallenge01.xcdatamodeld in Sources */,
