@@ -9,6 +9,10 @@ import UIKit
 
 class MovieListTableViewCell: UITableViewCell {
 
+    private let IMAGE_PLACEHOLDER_NAME = "no-image-placeholder"
+    private let TITLE_PLACEHOLDER = "Movie"
+    private let RELEASE_DATE_PLACEHOLDER = "xx/xx/xxxx"
+    
     static let reuseIdentifier: String = "MovieListCell"
     
     private var poster = UIImageView()
@@ -55,7 +59,8 @@ class MovieListTableViewCell: UITableViewCell {
 
     func setPoster(_ image: UIImage?) {
         guard let image else {
-            self.poster.image = UIImage(named: "no-image-placeholder")
+            let placeholderImage = UIImage(named: IMAGE_PLACEHOLDER_NAME)
+            self.poster.image = placeholderImage
             return
         }
         
@@ -63,10 +68,20 @@ class MovieListTableViewCell: UITableViewCell {
     }
     
     func setTitle(_ title: String?) {
-        self.title.text = title ?? "placeholder"
+        guard let title else {
+            self.title.text = TITLE_PLACEHOLDER
+            return
+        }
+        
+        self.title.text = title
     }
     
     func setReleaseDate(_ releaseDate: String?) {
-        self.releaseDate.text = releaseDate ?? "xxxx"
+        guard let releaseDate else {
+            self.releaseDate.text = RELEASE_DATE_PLACEHOLDER
+            return
+        }
+        
+        self.releaseDate.text = releaseDate
     }
 }
