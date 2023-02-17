@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MovieListTableViewCell: UITableViewCell {
+class MovieListTableViewCell: UITableViewCell, CellIdentifiable {
 
     private let IMAGE_PLACEHOLDER_NAME = "no-image-placeholder"
     private let TITLE_PLACEHOLDER = "Movie"
@@ -56,7 +56,9 @@ class MovieListTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+}
 
+extension MovieListTableViewCell {
     func setPoster(_ image: UIImage?) {
         guard let image else {
             let placeholderImage = UIImage(named: IMAGE_PLACEHOLDER_NAME)
