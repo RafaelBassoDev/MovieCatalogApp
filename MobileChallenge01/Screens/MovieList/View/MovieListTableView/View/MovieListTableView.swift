@@ -7,14 +7,14 @@
 
 import UIKit
 
-class MovieListTableView: UITableView {
+class MovieListTableView<Cell: UITableViewCell>: UITableView where Cell: CellIdentifiable {
     
     var constraintDelegate: UITableViewConstraintDelegate?
     
     init() {
         super.init(frame: CGRect(), style: .plain)
         
-        register(MovieListTableViewCell.self, forCellReuseIdentifier: MovieListTableViewCell.reuseIdentifier)
+        register(Cell.self, forCellReuseIdentifier: Cell.reuseIdentifier)
         
         translatesAutoresizingMaskIntoConstraints = false
     }
