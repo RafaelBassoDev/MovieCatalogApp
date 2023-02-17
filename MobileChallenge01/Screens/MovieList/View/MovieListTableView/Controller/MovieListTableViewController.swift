@@ -9,7 +9,7 @@ import UIKit
 
 class MovieListTableViewController {
     
-    var view: MovieListTableView
+    var view: MovieListTableView<MovieListTableViewCell>
     
     init(_ controller: MovieListViewController) {
         view = MovieListTableView()
