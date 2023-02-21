@@ -9,9 +9,13 @@ import Foundation
 
 struct MovieDetailViewModel {
     
-    var model: Movie
+    private var model: Movie
     
     init(model: Movie) {
         self.model = model
+    }
+    
+    func getMovieTitle() -> String {
+        model.title
     }
 }
