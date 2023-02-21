@@ -28,6 +28,7 @@
 		55FA31B7299FE886006B3971 /* CellIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA31B6299FE886006B3971 /* CellIdentifiable.swift */; };
 		55FA31BC29A50D47006B3971 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA31BB29A50D47006B3971 /* MovieDetailViewController.swift */; };
 		55FA31BF29A50DE6006B3971 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA31BE29A50DE6006B3971 /* MovieDetailViewModel.swift */; };
+		55FA31C429A51838006B3971 /* MovieDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA31C329A51838006B3971 /* MovieDetailViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		55FA31B6299FE886006B3971 /* CellIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellIdentifiable.swift; sourceTree = "<group>"; };
 		55FA31BB29A50D47006B3971 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		55FA31BE29A50DE6006B3971 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
+		55FA31C329A51838006B3971 /* MovieDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				5581CAE5297752FA0071613F /* MobileChallenge01Tests.swift */,
+				55FA31C329A51838006B3971 /* MovieDetailViewModelTests.swift */,
 			);
 			path = MobileChallenge01Tests;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55FA31C429A51838006B3971 /* MovieDetailViewModelTests.swift in Sources */,
 				5581CAE6297752FA0071613F /* MobileChallenge01Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
