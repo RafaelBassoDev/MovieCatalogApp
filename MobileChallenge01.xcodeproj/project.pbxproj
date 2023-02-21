@@ -26,6 +26,8 @@
 		55FA31B129943584006B3971 /* UITableViewConstraintDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA31B029943584006B3971 /* UITableViewConstraintDelegate.swift */; };
 		55FA31B5299437C6006B3971 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA31B4299437C6006B3971 /* UINavigationController.swift */; };
 		55FA31B7299FE886006B3971 /* CellIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA31B6299FE886006B3971 /* CellIdentifiable.swift */; };
+		55FA31BC29A50D47006B3971 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA31BB29A50D47006B3971 /* MovieDetailViewController.swift */; };
+		55FA31BF29A50DE6006B3971 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA31BE29A50DE6006B3971 /* MovieDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		55FA31B029943584006B3971 /* UITableViewConstraintDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewConstraintDelegate.swift; sourceTree = "<group>"; };
 		55FA31B4299437C6006B3971 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		55FA31B6299FE886006B3971 /* CellIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellIdentifiable.swift; sourceTree = "<group>"; };
+		55FA31BB29A50D47006B3971 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		55FA31BE29A50DE6006B3971 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,14 +100,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		553E357929919287004D9F17 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				553E358529928EA2004D9F17 /* MovieListViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		553E357A299192A9004D9F17 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +128,8 @@
 		553E3589299299D7004D9F17 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				55FA31C029A50F9B006B3971 /* Shared */,
+				55FA31B929A50D2C006B3971 /* MovieDetail */,
 				553E358A299299E0004D9F17 /* MovieList */,
 			);
 			path = Screens;
@@ -140,10 +138,9 @@
 		553E358A299299E0004D9F17 /* MovieList */ = {
 			isa = PBXGroup;
 			children = (
-				5581CB04297838920071613F /* Controller */,
-				553E357929919287004D9F17 /* ViewModel */,
+				553E357F299196F9004D9F17 /* MovieListViewController.swift */,
+				553E358529928EA2004D9F17 /* MovieListViewModel.swift */,
 				553E357A299192A9004D9F17 /* View */,
-				553E357B299192B2004D9F17 /* Model */,
 			);
 			path = MovieList;
 			sourceTree = "<group>";
@@ -217,14 +214,6 @@
 			path = Delegate;
 			sourceTree = "<group>";
 		};
-		5581CB04297838920071613F /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				553E357F299196F9004D9F17 /* MovieListViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		5581CB05297838E10071613F /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,20 +225,12 @@
 		55FA31AB29942FB0006B3971 /* MovieListTableView */ = {
 			isa = PBXGroup;
 			children = (
-				55FA31B22994364E006B3971 /* Delegate */,
+				55FA31AD29942FDD006B3971 /* MovieListTableViewController.swift */,
 				55FA31AF2994300A006B3971 /* View */,
-				55FA31AC29942FC1006B3971 /* Controller */,
-				55FA31B8299FE890006B3971 /* Protocol */,
+				55FA31C229A512A6006B3971 /* Protocol */,
+				55FA31C129A5129D006B3971 /* Delegate */,
 			);
 			path = MovieListTableView;
-			sourceTree = "<group>";
-		};
-		55FA31AC29942FC1006B3971 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				55FA31AD29942FDD006B3971 /* MovieListTableViewController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		55FA31AF2994300A006B3971 /* View */ = {
@@ -261,14 +242,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		55FA31B22994364E006B3971 /* Delegate */ = {
-			isa = PBXGroup;
-			children = (
-				55FA31B029943584006B3971 /* UITableViewConstraintDelegate.swift */,
-			);
-			path = Delegate;
-			sourceTree = "<group>";
-		};
 		55FA31B3299437B2006B3971 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,7 +250,32 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		55FA31B8299FE890006B3971 /* Protocol */ = {
+		55FA31B929A50D2C006B3971 /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				55FA31BE29A50DE6006B3971 /* MovieDetailViewModel.swift */,
+				55FA31BB29A50D47006B3971 /* MovieDetailViewController.swift */,
+			);
+			path = MovieDetail;
+			sourceTree = "<group>";
+		};
+		55FA31C029A50F9B006B3971 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				553E357B299192B2004D9F17 /* Model */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		55FA31C129A5129D006B3971 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				55FA31B029943584006B3971 /* UITableViewConstraintDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		55FA31C229A512A6006B3971 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
 				55FA31B6299FE886006B3971 /* CellIdentifiable.swift */,
@@ -438,8 +436,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5581CACC297752F90071613F /* AppDelegate.swift in Sources */,
+				55FA31BC29A50D47006B3971 /* MovieDetailViewController.swift in Sources */,
 				553E357E299192D7004D9F17 /* Coordinator.swift in Sources */,
 				553E35822992884D004D9F17 /* Movie.swift in Sources */,
+				55FA31BF29A50DE6006B3971 /* MovieDetailViewModel.swift in Sources */,
 				55FA31B7299FE886006B3971 /* CellIdentifiable.swift in Sources */,
 				55FA31B129943584006B3971 /* UITableViewConstraintDelegate.swift in Sources */,
 				553E358629928EA2004D9F17 /* MovieListViewModel.swift in Sources */,

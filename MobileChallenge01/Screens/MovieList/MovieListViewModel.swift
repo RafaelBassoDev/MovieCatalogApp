@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MovieListViewModel {
+struct MovieListViewModel {
     
     var model: MovieList?
     
@@ -15,7 +15,7 @@ class MovieListViewModel {
     ///
     /// - Parameters:
     ///   - completion: completion handler indicating the function has finished.
-    func refreshListWithPopularMovies(_ completion: @escaping () -> Void) { // Adicionar error e message response da API
+    mutating func refreshListWithPopularMovies(_ completion: @escaping () -> Void) { // Adicionar error e message response da API
         self.model = MovieList(
             Movie(poster: nil, title: "Narnia", overview: "", releaseDate: "1998", popularity: 8.7, genres: []),
             Movie(poster: nil, title: "Avatar 2", overview: "", releaseDate: "2022", popularity: 8.7, genres: []),
@@ -30,7 +30,7 @@ class MovieListViewModel {
     /// - Parameters:
     ///   - inputStream: string to search on API.
     ///   - completion: completion handler indicating the function has finished.
-    func searchForTitles(containing inputStream: String, _ completion: @escaping () -> Void) {
+    mutating func searchForTitles(containing inputStream: String, _ completion: @escaping () -> Void) {
         self.model = MovieList(
             Movie(poster: nil, title: "Avatar 2", overview: "", releaseDate: "2022", popularity: 8.7, genres: []),
             Movie(poster: nil, title: "Narnia", overview: "", releaseDate: "2015", popularity: 8.7, genres: [])

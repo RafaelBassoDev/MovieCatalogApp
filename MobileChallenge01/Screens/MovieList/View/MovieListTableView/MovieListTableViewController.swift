@@ -11,7 +11,7 @@ class MovieListTableViewController {
     
     var view: MovieListTableView<MovieListTableViewCell>
     
-    init(_ controller: MovieListViewController) {
+    init(controller: MovieListViewController) {
         view = MovieListTableView()
         
         view.delegate = controller
