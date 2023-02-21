@@ -28,4 +28,16 @@ final class Coordinator {
         
         navigationController.pushViewController(viewController, animated: true)
     }
+    
+    func showDetails(of movie: Movie) {
+        let viewModel = MovieDetailViewModel(model: movie)
+        
+        let viewController = MovieDetailViewController(viewModel: viewModel)
+        
+        viewController.coordinator = self
+        
+        viewController.modalPresentationStyle = .fullScreen
+        
+        navigationController.pushViewController(viewController, animated: true)
+    }
 }
