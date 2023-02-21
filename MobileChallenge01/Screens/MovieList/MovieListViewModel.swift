@@ -9,7 +9,7 @@ import UIKit
 
 struct MovieListViewModel {
     
-    var model: MovieList?
+    private var model: MovieList?
     
     /// Updates model with the latest API popular movies.
     ///
