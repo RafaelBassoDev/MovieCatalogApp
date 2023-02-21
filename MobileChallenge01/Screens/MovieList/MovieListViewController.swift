@@ -28,7 +28,7 @@ class MovieListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableViewController = MovieListTableViewController(self)
+        self.tableViewController = MovieListTableViewController(controller: self)
         
         view.addSubview(tableViewController.view)
         
@@ -43,7 +43,8 @@ class MovieListViewController: UIViewController {
 
 extension MovieListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        guard let selectedMovie = viewModel.getMovieData(for: indexPath) else { return }
+        print(selectedMovie.title)
     }
 }
 
