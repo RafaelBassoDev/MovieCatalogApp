@@ -44,7 +44,7 @@ class MovieListViewController: UIViewController {
 extension MovieListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let selectedMovie = viewModel.getMovieData(for: indexPath) else { return }
-        print(selectedMovie.title)
+        coordinator?.showDetails(of: selectedMovie)
     }
 }
 
