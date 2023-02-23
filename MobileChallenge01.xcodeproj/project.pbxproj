@@ -18,7 +18,6 @@
 		5581CAD6297752F90071613F /* MobileChallenge01.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5581CAD4297752F90071613F /* MobileChallenge01.xcdatamodeld */; };
 		5581CAD8297752FA0071613F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5581CAD7297752FA0071613F /* Assets.xcassets */; };
 		5581CADB297752FA0071613F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5581CAD9297752FA0071613F /* LaunchScreen.storyboard */; };
-		5581CAE6297752FA0071613F /* MobileChallenge01Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5581CAE5297752FA0071613F /* MobileChallenge01Tests.swift */; };
 		5581CAF0297752FA0071613F /* MobileChallenge01UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5581CAEF297752FA0071613F /* MobileChallenge01UITests.swift */; };
 		5581CAF2297752FA0071613F /* MobileChallenge01UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5581CAF1297752FA0071613F /* MobileChallenge01UITestsLaunchTests.swift */; };
 		55FA31AA29942A37006B3971 /* MovieListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA31A929942A37006B3971 /* MovieListTableView.swift */; };
@@ -64,7 +63,6 @@
 		5581CADA297752FA0071613F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5581CADC297752FA0071613F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5581CAE1297752FA0071613F /* MobileChallenge01Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileChallenge01Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5581CAE5297752FA0071613F /* MobileChallenge01Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileChallenge01Tests.swift; sourceTree = "<group>"; };
 		5581CAEB297752FA0071613F /* MobileChallenge01UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileChallenge01UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5581CAEF297752FA0071613F /* MobileChallenge01UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileChallenge01UITests.swift; sourceTree = "<group>"; };
 		5581CAF1297752FA0071613F /* MobileChallenge01UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileChallenge01UITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -183,7 +181,6 @@
 		5581CAE4297752FA0071613F /* MobileChallenge01Tests */ = {
 			isa = PBXGroup;
 			children = (
-				5581CAE5297752FA0071613F /* MobileChallenge01Tests.swift */,
 				55FA31C329A51838006B3971 /* MovieDetailViewModelTests.swift */,
 				55FA31C529A51EAA006B3971 /* MovieListViewModelTests.swift */,
 			);
@@ -465,7 +462,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				55FA31C429A51838006B3971 /* MovieDetailViewModelTests.swift in Sources */,
-				5581CAE6297752FA0071613F /* MobileChallenge01Tests.swift in Sources */,
 				55FA31C629A51EAA006B3971 /* MovieListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
