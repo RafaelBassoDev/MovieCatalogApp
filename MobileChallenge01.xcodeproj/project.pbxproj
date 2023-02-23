@@ -56,15 +56,15 @@
 		553E358329928E64004D9F17 /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
 		553E358529928EA2004D9F17 /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 		553E358B29929FCC004D9F17 /* MovieListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableViewCell.swift; sourceTree = "<group>"; };
-		5581CAC8297752F90071613F /* MobileChallenge01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileChallenge01.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5581CAC8297752F90071613F /* MobileChallenge01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = MobileChallenge01.app; path = "/Users/rcb/Documents/GitHub/MobileChallenge01/build/Debug-iphoneos/MobileChallenge01.app"; sourceTree = "<absolute>"; };
 		5581CACB297752F90071613F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5581CACD297752F90071613F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5581CAD5297752F90071613F /* MobileChallenge01.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MobileChallenge01.xcdatamodel; sourceTree = "<group>"; };
 		5581CAD7297752FA0071613F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5581CADA297752FA0071613F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5581CADC297752FA0071613F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5581CAE1297752FA0071613F /* MobileChallenge01Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileChallenge01Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5581CAEB297752FA0071613F /* MobileChallenge01UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileChallenge01UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5581CAE1297752FA0071613F /* MobileChallenge01Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MobileChallenge01Tests.xctest; path = "/Users/rcb/Documents/GitHub/MobileChallenge01/build/Debug-iphoneos/MobileChallenge01Tests.xctest"; sourceTree = "<absolute>"; };
+		5581CAEB297752FA0071613F /* MobileChallenge01UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MobileChallenge01UITests.xctest; path = "/Users/rcb/Documents/GitHub/MobileChallenge01/build/Debug-iphoneos/MobileChallenge01UITests.xctest"; sourceTree = "<absolute>"; };
 		5581CAEF297752FA0071613F /* MobileChallenge01UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileChallenge01UITests.swift; sourceTree = "<group>"; };
 		5581CAF1297752FA0071613F /* MobileChallenge01UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileChallenge01UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		55FA31A929942A37006B3971 /* MovieListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableView.swift; sourceTree = "<group>"; };
@@ -157,19 +157,7 @@
 				5581CACA297752F90071613F /* MobileChallenge01 */,
 				5581CAE4297752FA0071613F /* MobileChallenge01Tests */,
 				5581CAEE297752FA0071613F /* MobileChallenge01UITests */,
-				5581CAC9297752F90071613F /* Products */,
-				55FA31CD29A7D020006B3971 /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		5581CAC9297752F90071613F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5581CAC8297752F90071613F /* MobileChallenge01.app */,
-				5581CAE1297752FA0071613F /* MobileChallenge01Tests.xctest */,
-				5581CAEB297752FA0071613F /* MobileChallenge01UITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		5581CACA297752F90071613F /* MobileChallenge01 */ = {
@@ -291,13 +279,6 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		55FA31CD29A7D020006B3971 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -390,7 +371,7 @@
 				Base,
 			);
 			mainGroup = 5581CABF297752F90071613F;
-			productRefGroup = 5581CAC9297752F90071613F /* Products */;
+			productRefGroup = 5581CABF297752F90071613F;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
