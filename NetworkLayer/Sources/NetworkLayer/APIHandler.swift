@@ -1,5 +1,10 @@
 import Foundation
 
-public class APIHandler {
-    public init() {}
+public struct APIHandler {
+    
+    private var endpoint: String
+    
+    public init(endpoint: String) {
+        self.endpoint = endpoint
+    }
 }
