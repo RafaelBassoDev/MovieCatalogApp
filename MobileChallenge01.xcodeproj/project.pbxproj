@@ -29,6 +29,7 @@
 		55FA31BF29A50DE6006B3971 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA31BE29A50DE6006B3971 /* MovieDetailViewModel.swift */; };
 		55FA31C429A51838006B3971 /* MovieDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA31C329A51838006B3971 /* MovieDetailViewModelTests.swift */; };
 		55FA31C629A51EAA006B3971 /* MovieListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA31C529A51EAA006B3971 /* MovieListViewModelTests.swift */; };
+		55FA31CF29A7D020006B3971 /* NetworkLayer in Frameworks */ = {isa = PBXBuildFile; productRef = 55FA31CE29A7D020006B3971 /* NetworkLayer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		55FA31BE29A50DE6006B3971 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
 		55FA31C329A51838006B3971 /* MovieDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModelTests.swift; sourceTree = "<group>"; };
 		55FA31C529A51EAA006B3971 /* MovieListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModelTests.swift; sourceTree = "<group>"; };
+		55FA31CC29A7D007006B3971 /* NetworkLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkLayer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55FA31CF29A7D020006B3971 /* NetworkLayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,10 +153,12 @@
 		5581CABF297752F90071613F = {
 			isa = PBXGroup;
 			children = (
+				55FA31CC29A7D007006B3971 /* NetworkLayer */,
 				5581CACA297752F90071613F /* MobileChallenge01 */,
 				5581CAE4297752FA0071613F /* MobileChallenge01Tests */,
 				5581CAEE297752FA0071613F /* MobileChallenge01UITests */,
 				5581CAC9297752F90071613F /* Products */,
+				55FA31CD29A7D020006B3971 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -286,6 +291,13 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		55FA31CD29A7D020006B3971 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -303,6 +315,9 @@
 			dependencies = (
 			);
 			name = MobileChallenge01;
+			packageProductDependencies = (
+				55FA31CE29A7D020006B3971 /* NetworkLayer */,
+			);
 			productName = MobileChallenge01;
 			productReference = 5581CAC8297752F90071613F /* MobileChallenge01.app */;
 			productType = "com.apple.product-type.application";
@@ -812,6 +827,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		55FA31CE29A7D020006B3971 /* NetworkLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkLayer;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		5581CAD4297752F90071613F /* MobileChallenge01.xcdatamodeld */ = {
