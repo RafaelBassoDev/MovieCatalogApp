@@ -10,16 +10,18 @@ public struct APIHandler {
         self.dataTaskhandler = APIDataTaskManager(session: session)
     }
     
-    public func callAPI(arguments: String = "", completion: @escaping (Result<(Data?, URLResponse?), Error>) -> Void ) {
+    public func callAPI(arguments: String = "", completion: @escaping (Result<(Data?, URLResponse?), Error>) -> Void ) throws {
         
         let URLString = self.endpoint + arguments
         
         let url = URL(string: URLString)
         
-        if let apiRequest = try? APIRequest(url: url) {
-            dataTaskhandler.createRequest(request: apiRequest.getRequest()) { result in
-                completion(result)
-            }
+        guard let apiRequest = try? APIRequest(url: url) else {
+            throw APIError.invalidRequest
+        }
+        
+        dataTaskhandler.createRequest(request: apiRequest.getRequest()) { result in
+            completion(result)
         }
     }
 }
