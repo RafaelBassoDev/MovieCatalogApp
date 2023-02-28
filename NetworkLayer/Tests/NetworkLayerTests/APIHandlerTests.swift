@@ -1,5 +1,5 @@
 import XCTest
-import NetworkLayer
+@testable import NetworkLayer
 
 final class APIHandlerTests: XCTestCase {
 
@@ -12,17 +12,22 @@ final class APIHandlerTests: XCTestCase {
         XCTAssertNotNil(sut)
     }
     
-    func testAPICallWithInvalidEndpoint() {
+    func testAPICallWithEmptyURL() {
+        endpoint = ""
         sut = APIHandler(endpoint: endpoint)
         
-        var failedToCallAPI = false
-        
-        do {
-            try sut.callAPI { _ in }
-        } catch {
-            failedToCallAPI = true
+        sut.callAPI { result in
+            switch result {
+            case .failure(let error):
+                
+                if let resultError = error as? APIError {
+                    XCTAssertEqual(resultError, APIError.invalidURL)
+                }
+                
+            default:
+                XCTFail("No error was thrown when expecting APIError.")
+                break
+            }
         }
-        
-        XCTAssertTrue(failedToCallAPI)
     }
 }
