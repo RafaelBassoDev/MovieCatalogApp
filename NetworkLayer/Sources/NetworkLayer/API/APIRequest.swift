@@ -5,14 +5,21 @@ internal struct APIRequest {
     private let url: URL
     
     public init(url: URL?) throws {
+        
         guard let url else {
-            throw APIError.invalidURL
+            throw APIError.badURL
         }
         
         self.url = url
         
-        if validateURL(url) == false {
-            throw APIError.invalidURL
+        do {
+            let urlIsValid = try validateURL(url)
+            
+            if urlIsValid == false {
+                throw APIError.badURL
+            }
+        } catch {
+            throw error
         }
     }
     
