@@ -19,14 +19,12 @@ final class APIHandlerTests: XCTestCase {
         sut.callAPI { result in
             switch result {
             case .failure(let error):
-                
                 if let resultError = error as? APIError {
-                    XCTAssertEqual(resultError, APIError.invalidURL)
+                    XCTAssertEqual(resultError, APIError.badURL)
                 }
                 
             default:
                 XCTFail("No error was thrown when expecting APIError.")
-                break
             }
         }
     }
