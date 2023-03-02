@@ -64,9 +64,9 @@
 		5581CADC297752FA0071613F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5581CAEF297752FA0071613F /* MobileChallenge01UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileChallenge01UITests.swift; sourceTree = "<group>"; };
 		5581CAF1297752FA0071613F /* MobileChallenge01UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileChallenge01UITestsLaunchTests.swift; sourceTree = "<group>"; };
-		5599D34629B118D70093001A /* MobileChallenge01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = MobileChallenge01.app; path = "/Users/rcb/Documents/GitHub/MobileChallenge01/build/Debug-iphoneos/MobileChallenge01.app"; sourceTree = "<absolute>"; };
-		5599D34729B118D70093001A /* MobileChallenge01Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MobileChallenge01Tests.xctest; path = "/Users/rcb/Documents/GitHub/MobileChallenge01/build/Debug-iphoneos/MobileChallenge01Tests.xctest"; sourceTree = "<absolute>"; };
-		5599D34829B118D70093001A /* MobileChallenge01UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MobileChallenge01UITests.xctest; path = "/Users/rcb/Documents/GitHub/MobileChallenge01/build/Debug-iphoneos/MobileChallenge01UITests.xctest"; sourceTree = "<absolute>"; };
+		5599D35529B11EFA0093001A /* MobileChallenge01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = MobileChallenge01.app; path = "/Users/rcb/Documents/GitHub/MobileChallenge01/build/Debug-iphoneos/MobileChallenge01.app"; sourceTree = "<absolute>"; };
+		5599D35629B11EFA0093001A /* MobileChallenge01Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MobileChallenge01Tests.xctest; path = "/Users/rcb/Documents/GitHub/MobileChallenge01/build/Debug-iphoneos/MobileChallenge01Tests.xctest"; sourceTree = "<absolute>"; };
+		5599D35729B11EFA0093001A /* MobileChallenge01UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MobileChallenge01UITests.xctest; path = "/Users/rcb/Documents/GitHub/MobileChallenge01/build/Debug-iphoneos/MobileChallenge01UITests.xctest"; sourceTree = "<absolute>"; };
 		55FA31A929942A37006B3971 /* MovieListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableView.swift; sourceTree = "<group>"; };
 		55FA31AD29942FDD006B3971 /* MovieListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableViewController.swift; sourceTree = "<group>"; };
 		55FA31B029943584006B3971 /* UITableViewConstraintDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewConstraintDelegate.swift; sourceTree = "<group>"; };
@@ -300,7 +300,7 @@
 				55FA31CE29A7D020006B3971 /* NetworkLayer */,
 			);
 			productName = MobileChallenge01;
-			productReference = 5599D34629B118D70093001A /* MobileChallenge01.app */;
+			productReference = 5599D35529B11EFA0093001A /* MobileChallenge01.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5581CAE0297752FA0071613F /* MobileChallenge01Tests */ = {
@@ -318,7 +318,7 @@
 			);
 			name = MobileChallenge01Tests;
 			productName = MobileChallenge01Tests;
-			productReference = 5599D34729B118D70093001A /* MobileChallenge01Tests.xctest */;
+			productReference = 5599D35629B11EFA0093001A /* MobileChallenge01Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		5581CAEA297752FA0071613F /* MobileChallenge01UITests */ = {
@@ -336,7 +336,7 @@
 			);
 			name = MobileChallenge01UITests;
 			productName = MobileChallenge01UITests;
-			productReference = 5599D34829B118D70093001A /* MobileChallenge01UITests.xctest */;
+			productReference = 5599D35729B11EFA0093001A /* MobileChallenge01UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
