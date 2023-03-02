@@ -12,14 +12,8 @@ internal struct APIRequest {
         
         self.url = url
         
-        do {
-            let urlIsValid = try validateURL(url)
-            
-            if urlIsValid == false {
-                throw APIError.badURL
-            }
-        } catch {
-            throw error
+        if urlIsValid(url) == false {
+            throw APIError.badURL
         }
     }
     
@@ -27,20 +21,15 @@ internal struct APIRequest {
         return URLRequest(url: self.url)
     }
     
-    private func validateURL(_ url: URL) -> Bool {
+    private func urlIsValid(_ url: URL) -> Bool {
         let urlString = url.absoluteString
         let checkingType: NSTextCheckingResult.CheckingType = [.link]
         
-        if urlString.isEmpty {
-            return false
-        }
-        
-        guard let detector = try? NSDataDetector(types: checkingType.rawValue) else {
-            return false
-        }
-        
-        if detector.numberOfMatches(in: urlString, options: .reportProgress, range: NSRange(location: 0, length: urlString.count)) > 0 {
-            return true
+        if let detector = try? NSDataDetector(types: checkingType.rawValue) {
+            
+            if detector.numberOfMatches(in: urlString, options: .reportProgress, range: NSRange(location: 0, length: urlString.count)) > 0 {
+                return true
+            }
         }
         
         return false
