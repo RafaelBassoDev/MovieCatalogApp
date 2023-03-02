@@ -1,10 +1,3 @@
-//
-//  APIRequestTests.swift
-//  
-//
-//  Created by Rafael Basso on 02/03/23.
-//
-
 import XCTest
 @testable import NetworkLayer
 
@@ -14,7 +7,7 @@ final class APIRequestTests: XCTestCase {
         let url = URL(string: "")
         
         do {
-            let _ = try APIRequest(url: url)
+            _ = try APIRequest(url: url)
             
         } catch {
             if let requestError = error as? APIError {
@@ -41,7 +34,7 @@ final class APIRequestTests: XCTestCase {
                 XCTAssertNil(request)
                 
             } catch {
-                XCTAssertEqual(error as! APIError, APIError.badURL)
+                XCTAssertEqual(error as? APIError, APIError.badURL)
             }
         }
     }
