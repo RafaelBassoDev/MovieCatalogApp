@@ -17,7 +17,7 @@ internal struct APIRequest {
         }
     }
     
-    public func getRequest() -> URLRequest {
+    public func getURLRequest() -> URLRequest {
         return URLRequest(url: self.url)
     }
     

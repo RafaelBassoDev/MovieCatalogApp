@@ -19,7 +19,7 @@ public struct APIHandler {
         do {
             let apiRequest = try APIRequest(url: url)
             
-            let dataTask = self.session.dataTask(with: apiRequest.getRequest()) { data, response, error in
+            let dataTask = self.session.dataTask(with: apiRequest.getURLRequest()) { data, response, error in
                 if let error {
                     completion(.failure(error))
                 }
