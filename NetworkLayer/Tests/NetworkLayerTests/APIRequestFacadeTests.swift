@@ -1,13 +1,13 @@
 import XCTest
 @testable import NetworkLayer
 
-final class APIRequestTests: XCTestCase {
+final class APIRequestFacadeTests: XCTestCase {
     
     func testCreateRequestWithNilURL() {
         let url = URL(string: "")
         
         do {
-            _ = try APIRequest(url: url)
+            _ = try APIRequestFacade(url: url)
             
         } catch {
             if let requestError = error as? APIError {
@@ -30,7 +30,7 @@ final class APIRequestTests: XCTestCase {
         
         for invalidURL in invalidURLArray {
             do {
-                let request = try APIRequest(url: invalidURL)
+                let request = try APIRequestFacade(url: invalidURL)
                 XCTAssertNil(request)
                 
             } catch {
@@ -45,7 +45,7 @@ final class APIRequestTests: XCTestCase {
         
         let url = URL(string: urlString)
         
-        let apiRequest = try APIRequest(url: url)
+        let apiRequest = try APIRequestFacade(url: url)
         
         let htmlRequest = apiRequest.getURLRequest()
         
