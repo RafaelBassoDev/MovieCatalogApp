@@ -1,5 +1,5 @@
 import Foundation
 
-protocol APISession {
+public protocol APISession {
     func sendRequest(_ request: URLRequest, completion: @escaping (Data?, URLResponse?, Error) -> Void)
 }
