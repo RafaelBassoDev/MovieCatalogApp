@@ -26,7 +26,7 @@ public struct APIHandler {
                     return
                 }
                 
-                if let data, let response {
+                if let data {
                     completion(.success((data, response)))
                 }
             }
