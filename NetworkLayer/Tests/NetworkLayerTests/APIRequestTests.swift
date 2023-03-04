@@ -47,7 +47,7 @@ final class APIRequestTests: XCTestCase {
         
         let apiRequest = try APIRequest(url: url)
         
-        let htmlRequest = apiRequest.getRequest()
+        let htmlRequest = apiRequest.getURLRequest()
         
         XCTAssertEqual(htmlRequest.url?.absoluteString, urlString)
 
