@@ -3,9 +3,9 @@ import Foundation
 public struct APIHandler {
     
     private let endpoint: String
-    private let session: URLSession
+    private let session: APISession
     
-    public init(endpoint: String, session: URLSession = URLSession.shared) {
+    public init(endpoint: String, session: APISession = URLSession.shared) {
         self.endpoint = endpoint
         self.session = session
     }
@@ -17,19 +17,19 @@ public struct APIHandler {
         let url = URL(string: URLString)
         
         do {
-            let apiRequest = try APIRequest(url: url)
+            let apiRequest = try APIRequestFacade(url: url)
             
-            let dataTask = self.session.dataTask(with: apiRequest.getURLRequest()) { data, response, error in
+            session.sendRequest(apiRequest.getURLRequest()) { data, response, error in
+                
                 if let error {
                     completion(.failure(error))
+                    return
                 }
                 
                 if let data, let response {
                     completion(.success((data, response)))
                 }
             }
-            
-            dataTask.resume()
             
         } catch {
             completion(.failure(error))
