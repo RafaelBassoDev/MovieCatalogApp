@@ -20,7 +20,7 @@ final class APIHandlerTests: XCTestCase {
         endpoint = ""
         sut = APIHandler(endpoint: endpoint)
         
-        sut.callAPI { result in
+        sut.request { result in
             switch result {
             case .failure(let error):
                 if let resultError = error as? APIError {
@@ -41,7 +41,7 @@ final class APIHandlerTests: XCTestCase {
 
         sut = APIHandler(endpoint: endpoint, session: mockSession)
         
-        sut.callAPI { result in
+        sut.request { result in
             switch result {
             case .failure(let error):
                 if let resultError = error as? APIError {
@@ -63,7 +63,7 @@ final class APIHandlerTests: XCTestCase {
         
         sut = APIHandler(endpoint: endpoint, session: mockSession)
         
-        sut.callAPI { result in
+        sut.request { result in
             switch result {
             case .success((let data, _)):
                 if let data {
@@ -88,7 +88,7 @@ final class APIHandlerTests: XCTestCase {
         
         sut = APIHandler(endpoint: endpoint, session: mockSession)
         
-        sut.callAPI { result in
+        sut.request { result in
             switch result {
             case .success((let data, let response)):
                 
