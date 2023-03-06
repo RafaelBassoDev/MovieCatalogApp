@@ -1,3 +1,5 @@
+// swiftlint:disable force_unwrapping
+
 import XCTest
 @testable import NetworkLayer
 
@@ -64,14 +66,12 @@ final class APIHandlerTests: XCTestCase {
         sut.callAPI { result in
             switch result {
             case .success((let data, _)):
-                
                 if let data {
                     let dataAsString = String(data: data, encoding: .utf8)
                     XCTAssertEqual(dataAsString, jsonString)
                 }
-                break
                 
-            case .failure(_):
+            case .failure:
                 XCTFail("Unexpected error was thrown when calling function.")
             }
         }
@@ -102,9 +102,7 @@ final class APIHandlerTests: XCTestCase {
                     XCTAssertEqual(httpResponse.url?.absoluteString, responseURL)
                 }
                 
-                break
-                
-            case .failure(_):
+            case .failure:
                 XCTFail("Unexpected error was thrown when calling function.")
             }
         }
