@@ -10,7 +10,7 @@ public struct APIHandler {
         self.session = session
     }
     
-    public func callAPI(arguments: String = "", completion: @escaping (Result<(Data?, URLResponse?), Error>) -> Void ) {
+    public func request(arguments: String = "", completion: @escaping (Result<(Data?, URLResponse?), Error>) -> Void ) {
         
         let URLString = self.endpoint + arguments
         
