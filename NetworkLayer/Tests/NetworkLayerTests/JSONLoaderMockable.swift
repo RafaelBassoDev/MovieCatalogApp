@@ -1,11 +1,11 @@
 import Foundation
 
-public protocol NetworkMockable: AnyObject {
+public protocol JSONLoaderMockable: AnyObject {
     var bundle: Bundle { get }
     func loadJSON<T: Decodable>(fileName: String, type: T.Type) -> T
 }
 
-extension NetworkMockable {
+extension JSONLoaderMockable {
     
     var bundle: Bundle {
         return Bundle(for: type(of: self))
