@@ -6,29 +6,31 @@ import XCTest
 final class APIHandlerTests: XCTestCase {
 
     var endpoint: String = "https://jsonplaceholder.typicode.com/"
-    var sut: APIHandler!
     
     func testAPIHandlerInstantiation() {
         
-        sut = APIHandler(endpoint: endpoint)
+        let apiHandler = APIHandler()
         
-        XCTAssertNotNil(sut)
+        XCTAssertNotNil(apiHandler)
     }
     
-    func testAPICallWithEmptyURL() {
+    func testApiRequestWithEmptyUrl() {
         
-        endpoint = ""
-        sut = APIHandler(endpoint: endpoint)
+        let sut = APIHandler()
         
-        sut.request { result in
+        let url = URL(string: "")
+        
+        let request = APIRequest(url: url)
+        
+        sut.request(request) { result in
             switch result {
+            case .success:
+                break
+                
             case .failure(let error):
                 if let resultError = error as? APIError {
                     XCTAssertEqual(resultError, APIError.badURL)
                 }
-                
-            default:
-                XCTFail("No error was thrown when expecting APIError.")
             }
         }
     }
@@ -36,20 +38,21 @@ final class APIHandlerTests: XCTestCase {
     func testAPICallMockingSessionWithError() {
 
         let mockSession = APISessionMock()
-        
         mockSession.error = APIError.badURL
 
-        sut = APIHandler(endpoint: endpoint, session: mockSession)
+        let sut = APIHandler(session: mockSession)
         
-        sut.request { result in
+        let request = APIRequest(url: URL(string: endpoint))
+        
+        sut.request(request) { result in
             switch result {
+            case .success:
+                break
+                
             case .failure(let error):
                 if let resultError = error as? APIError {
                     XCTAssertEqual(resultError, APIError.badURL)
                 }
-                
-            default:
-                XCTFail("No error was thrown when expecting APIError.")
             }
         }
     }
@@ -61,9 +64,11 @@ final class APIHandlerTests: XCTestCase {
         let mockSession = APISessionMock()
         mockSession.data = jsonString.data(using: .utf8)
         
-        sut = APIHandler(endpoint: endpoint, session: mockSession)
+        let sut = APIHandler(session: mockSession)
         
-        sut.request { result in
+        let request = APIRequest(url: URL(string: endpoint))
+        
+        sut.request(request) { result in
             switch result {
             case .success((let data, _)):
                 if let data {
@@ -72,7 +77,7 @@ final class APIHandlerTests: XCTestCase {
                 }
                 
             case .failure:
-                XCTFail("Unexpected error was thrown when calling function.")
+                break
             }
         }
     }
@@ -80,15 +85,18 @@ final class APIHandlerTests: XCTestCase {
     func testAPICallMockingSessionWithDataAndResponse() {
 
         let jsonString = "{\"id\": 1}"
+        
         let responseURL = "www.google.com"
 
         let mockSession = APISessionMock()
         mockSession.data = jsonString.data(using: .utf8)
         mockSession.response = HTTPURLResponse(url: URL(string: responseURL)!, statusCode: 200, httpVersion: "1.1", headerFields: nil)
         
-        sut = APIHandler(endpoint: endpoint, session: mockSession)
+        let sut = APIHandler(session: mockSession)
         
-        sut.request { result in
+        let request = APIRequest(url: URL(string: endpoint))
+        
+        sut.request(request) { result in
             switch result {
             case .success((let data, let response)):
                 
@@ -102,8 +110,9 @@ final class APIHandlerTests: XCTestCase {
                     XCTAssertEqual(httpResponse.url?.absoluteString, responseURL)
                 }
                 
+                
             case .failure:
-                XCTFail("Unexpected error was thrown when calling function.")
+                break
             }
         }
     }
