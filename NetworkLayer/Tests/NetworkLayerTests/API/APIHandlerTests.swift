@@ -110,7 +110,6 @@ final class APIHandlerTests: XCTestCase {
                     XCTAssertEqual(httpResponse.url?.absoluteString, responseURL)
                 }
                 
-                
             case .failure:
                 break
             }
