@@ -1,6 +1,6 @@
 import Foundation
 
-internal struct APIRequestFacade {
+internal struct APIRequest {
     
     private let url: URL
     

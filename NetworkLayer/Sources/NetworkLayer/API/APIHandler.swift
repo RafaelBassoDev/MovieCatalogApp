@@ -17,7 +17,7 @@ public struct APIHandler {
         let url = URL(string: URLString)
         
         do {
-            let apiRequest = try APIRequestFacade(url: url)
+            let apiRequest = try APIRequest(url: url)
             
             session.sendRequest(apiRequest.getURLRequest()) { data, response, error in
                 
