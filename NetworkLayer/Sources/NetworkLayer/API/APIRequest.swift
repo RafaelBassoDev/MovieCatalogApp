@@ -4,23 +4,21 @@ public struct APIRequest {
     
     private let url: URL
     
-    public init(url: URL?) throws {
+    public var urlRequest: URLRequest {
+        URLRequest(url: self.url)
+    }
+    
+    public init?(url: URL?) {
         
-        guard let url else {
-            throw APIError.badURL
-        }
+        guard let url else { return nil }
         
         self.url = url
         
-        if urlIsValid(url) == false {
-            throw APIError.badURL
-        }
+        if urlIsValid(url) == false { return nil }
     }
-    
-    public func getURLRequest() -> URLRequest {
-        return URLRequest(url: self.url)
-    }
-    
+}
+
+extension APIRequest {
     private func urlIsValid(_ url: URL) -> Bool {
         let urlString = url.absoluteString
         let checkingType: NSTextCheckingResult.CheckingType = [.link]
