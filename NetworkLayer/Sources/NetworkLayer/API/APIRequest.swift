@@ -1,6 +1,6 @@
 import Foundation
 
-public struct APIRequest {
+internal struct APIRequest {
     
     private let url: URL
     
@@ -8,7 +8,7 @@ public struct APIRequest {
         URLRequest(url: self.url)
     }
     
-    public init?(url: URL?) {
+    internal init?(url: URL?) {
         
         guard let url else { return nil }
         
