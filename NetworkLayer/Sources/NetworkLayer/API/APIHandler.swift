@@ -10,29 +10,36 @@ public struct APIHandler {
         self.session = session
     }
     
-    public func request(arguments: String = "", completion: @escaping (Result<(Data?, URLResponse?), Error>) -> Void ) {
+    public func request(_ apiRequest: APIRequest?, completion: @escaping (Result<(Data?, URLResponse?), Error>) -> Void) {
         
-        let URLString = self.endpoint + arguments
+        guard let apiRequest else {
+            completion(.failure(APIError.invalidRequest))
+            return
+        }
         
-        let url = URL(string: URLString)
-        
-        do {
-            let apiRequest = try APIRequest(url: url)
-            
-            session.sendRequest(apiRequest.getURLRequest()) { data, response, error in
-                
-                if let error {
-                    completion(.failure(error))
-                    return
-                }
-                
-                if let data {
-                    completion(.success((data, response)))
-                }
+        session.sendRequest(apiRequest.urlRequest) { data, response, error in
+            if let error {
+                completion(.failure(error))
+                return
             }
             
-        } catch {
-            completion(.failure(error))
+            if let data {
+                completion(.success((data, response)))
+            }
+        }
+        
+    }
+    
+    public func request(arguments: String = "", completion: @escaping (Result<(Data?, URLResponse?), Error>) -> Void ) {
+        
+        let urlString = self.endpoint + arguments
+        
+        let url = URL(string: urlString)
+        
+        let apiRequest = APIRequest(url: url)
+        
+        self.request(apiRequest) { result in
+            completion(result)
         }
     }
 }
