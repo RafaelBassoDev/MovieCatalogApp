@@ -1,10 +1,10 @@
 import Foundation
 
-public struct APIHandler {
+internal struct APIHandler {
     
     private let session: APISession
     
-    public init(session: APISession = URLSession.shared) {
+    internal init(session: APISession = URLSession.shared) {
         self.session = session
     }
     
