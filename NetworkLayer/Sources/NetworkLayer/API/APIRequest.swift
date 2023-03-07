@@ -1,6 +1,6 @@
 import Foundation
 
-internal struct APIRequest {
+public struct APIRequest {
     
     private let url: URL
     
