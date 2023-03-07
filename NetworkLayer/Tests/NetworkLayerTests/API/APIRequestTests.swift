@@ -6,14 +6,9 @@ final class APIRequestTests: XCTestCase {
     func testCreateRequestWithNilURL() {
         let url = URL(string: "")
         
-        do {
-            _ = try APIRequest(url: url)
-            
-        } catch {
-            if let requestError = error as? APIError {
-                XCTAssertEqual(requestError, APIError.badURL)
-            }
-        }
+        let request = APIRequest(url: url)
+        
+        XCTAssertNil(request)
     }
     
     func testCreateRequestWithInvalidURLs() {
@@ -29,13 +24,10 @@ final class APIRequestTests: XCTestCase {
         ]
         
         for invalidURL in invalidURLArray {
-            do {
-                let request = try APIRequest(url: invalidURL)
-                XCTAssertNil(request)
-                
-            } catch {
-                XCTAssertEqual(error as? APIError, APIError.badURL)
-            }
+            
+            let request = APIRequest(url: invalidURL)
+            
+            XCTAssertNil(request)
         }
     }
     
@@ -45,11 +37,12 @@ final class APIRequestTests: XCTestCase {
         
         let url = URL(string: urlString)
         
-        let apiRequest = try APIRequest(url: url)
-        
-        let htmlRequest = apiRequest.getURLRequest()
-        
-        XCTAssertEqual(htmlRequest.url?.absoluteString, urlString)
-
+        if let apiRequest = APIRequest(url: url) {
+            let htmlRequest = apiRequest.urlRequest
+            
+            let requestUrlString = htmlRequest.url?.absoluteString
+            
+            XCTAssertEqual(requestUrlString, urlString)
+        }
     }
 }
