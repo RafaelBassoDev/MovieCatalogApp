@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  
-//
-//  Created by Rafael Basso on 07/03/23.
-//
-
 import Foundation
 
 enum HTTPMethod: String {
