@@ -1,12 +1,12 @@
 import Foundation
 
+@available(iOS 13.0.0, *)
 public protocol HTTPClient {
-    @available(iOS 13.0.0, *)
     func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) async throws -> T
 }
 
+@available(iOS 13.0.0, *)
 extension HTTPClient {
-    @available(iOS 13.0.0, *)
     func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) async throws -> T {
         var urlComponents = URLComponents()
         urlComponents.scheme = endpoint.scheme
