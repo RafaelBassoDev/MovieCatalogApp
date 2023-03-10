@@ -1,5 +1,3 @@
 import Foundation
 
-public struct JSONParser {
-    public init() {}
-}
+public struct JSONParser: JSONDataParsing {}
