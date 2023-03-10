@@ -26,7 +26,10 @@ let package = Package(
         ),
         .testTarget(
             name: "NetworkLayerTests",
-            dependencies: ["NetworkLayer"]
-        ),
+            dependencies: ["NetworkLayer"],
+            resources: [
+                .process("Resources/json_response.json")
+            ]
+        )
     ]
 )
