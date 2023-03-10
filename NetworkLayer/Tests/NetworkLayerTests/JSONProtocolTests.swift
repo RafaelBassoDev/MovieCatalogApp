@@ -6,9 +6,7 @@ class JSONDataParsingMock: JSONDataParsing {}
 
 final class JSONProtocolTests: XCTestCase {
     
-    var bundle: Bundle {
-        Bundle(for: type(of: self))
-    }
+    var bundle = Bundle.module
     
     var mockLoader = JSONFileLoadingMock()
     var mockParser = JSONDataParsingMock()
