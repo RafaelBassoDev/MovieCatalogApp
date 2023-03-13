@@ -7,6 +7,12 @@ enum MovieEndpoint {
 }
 
 extension MovieEndpoint: Endpoint {
+    
+    var acessToken: String {
+        let token = Bundle.main.infoDictionary?["API_AUTH_TOKEN"] as? String
+        return token ?? ""
+    }
+    
     var scheme: String {
         return "https"
     }
@@ -24,6 +30,10 @@ extension MovieEndpoint: Endpoint {
         }
     }
     
+    var query: String {
+        return "api_key=\(acessToken)"
+    }
+    
     var method: NetworkLayer.HTTPMethod {
         switch self {
         case .popular, .genres:
@@ -32,10 +42,8 @@ extension MovieEndpoint: Endpoint {
     }
     
     var header: [String: String]? {
-        let accessToken = Bundle.main.infoDictionary?["API_AUTH_TOKEN"] ?? ""
-        
         return [
-            "Authorization": "Bearer \(accessToken)",
+            "Authorization": "Bearer \(acessToken)",
             "Content-Type": "application/json;charset=utf-8"
         ]
     }
