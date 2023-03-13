@@ -12,6 +12,6 @@ struct Movie {
     let title: String
     let overview: String
     let releaseDate: String
-    let popularity: Float
+    let popularity: Double
     let genres: [String]
 }
