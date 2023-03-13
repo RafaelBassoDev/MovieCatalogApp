@@ -3,6 +3,7 @@ import NetworkLayer
 
 enum MovieEndpoint {
     case popular
+    case genres
 }
 
 extension MovieEndpoint: Endpoint {
@@ -18,12 +19,14 @@ extension MovieEndpoint: Endpoint {
         switch self {
         case .popular:
             return "/3/movie/popular"
+        case .genres:
+            return "/3/genre/movie/list"
         }
     }
     
     var method: NetworkLayer.HTTPMethod {
         switch self {
-        case .popular:
+        case .popular, .genres:
             return .get
         }
     }
