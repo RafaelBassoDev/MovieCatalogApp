@@ -13,4 +13,8 @@ struct MovieList {
     init(_ movieList: Movie...) {
         self.movies = movieList.map { $0 }
     }
+    
+    init(_ movieList: [Movie]) {
+        self.movies = movieList
+    }
 }
