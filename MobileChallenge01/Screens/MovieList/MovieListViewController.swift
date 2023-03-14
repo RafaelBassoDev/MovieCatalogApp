@@ -12,16 +12,14 @@ class MovieListViewController: UIViewController {
     weak var coordinator: Coordinator?
     
     var viewModel: MovieListViewModel!
-    
     var tableViewController: MovieListTableViewController!
     
     init(viewModel: MovieListViewModel) {
-        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        self.viewModel = viewModel
     }
     
     required init?(coder: NSCoder) {
-        self.viewModel = MovieListViewModel()
         super.init(coder: coder)
     }
     
@@ -32,9 +30,16 @@ class MovieListViewController: UIViewController {
         
         view.addSubview(tableViewController.view)
         
-        viewModel.refreshListWithPopularMovies { [weak self] in
-            DispatchQueue.main.async {
-                self?.tableViewController.reloadData()
+        viewModel.getPopularMovies { result in
+            switch result {
+            case .success(let movies):
+                self.viewModel.updateMovieList(with: movies)
+                DispatchQueue.main.async {
+                    self.tableViewController.reloadData()
+                }
+                
+            case .failure(let error):
+                print("ERROR: \(error)")
             }
         }
     }
