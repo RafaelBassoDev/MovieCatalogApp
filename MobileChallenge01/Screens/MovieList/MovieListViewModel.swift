@@ -37,20 +37,18 @@ class MovieListViewModel {
         completion()
     }
 }
+
+extension MovieListViewModel {
+    
+    func updateMovieList(with movies: [Movie]) {
+        self.movieList = MovieList(movies)
+    }
     
     func getMovieCount() -> Int {
-        guard let movieArray = model?.movies else {
-            return 0
-        }
-        
-        return movieArray.count
+        return movieList.count
     }
     
     func getMovieData(for indexPath: IndexPath) -> Movie? {
-        guard let movieDetail = model?.movies[indexPath.row] else {
-            return nil
-        }
-        
-        return movieDetail
+        return movieList[indexPath.row]
     }
 }
