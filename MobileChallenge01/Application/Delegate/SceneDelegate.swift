@@ -18,8 +18,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let navigationController = UINavigationController()
         
-        navigationController.hidesBarsOnSwipe = true
-        
         navigationController.setCustomAppearance()
         
         coordinator = Coordinator(navigationController: navigationController)
