@@ -16,7 +16,9 @@ final class Coordinator {
     }
     
     func start() {
-        let viewModel = MovieListViewModel()
+        let repository = MovieRepository(service: MovieService())
+        
+        let viewModel = MovieListViewModel(repository: repository)
         
         let viewController = MovieListViewController(viewModel: viewModel)
         
