@@ -8,13 +8,24 @@
 import Foundation
 
 struct MovieList {
-    let movies: [Movie]
+    private let movies: [Movie]
     
-    init(_ movieList: Movie...) {
-        self.movies = movieList.map { $0 }
+    init(_ movies: [Movie]) {
+        self.movies = movies
     }
-    
-    init(_ movieList: [Movie]) {
-        self.movies = movieList
+}
+
+extension MovieList {
+    subscript(index: Int) -> Movie? {
+        if index < 0 { return nil }
+        if index > (count - 1) { return nil }
+        
+        return self.movies[index]
+    }
+}
+
+extension MovieList {
+    var count: Int {
+        movies.count
     }
 }
