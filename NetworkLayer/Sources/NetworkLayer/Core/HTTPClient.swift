@@ -2,12 +2,13 @@ import Foundation
 
 @available(iOS 13.0.0, *)
 public protocol HTTPClient {
-    func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) async throws -> T
+    func sendRequest(endpoint: Endpoint) async throws -> Data
+    func sendRequest<T: Decodable>(endpoint: Endpoint, decoding responseModel: T.Type) async throws -> T
 }
 
 @available(iOS 13.0.0, *)
 extension HTTPClient {
-    public func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) async throws -> T {
+    public func sendRequest(endpoint: Endpoint) async throws -> Data {
         var urlComponents = URLComponents()
         urlComponents.scheme = endpoint.scheme
         urlComponents.host = endpoint.host
@@ -34,10 +35,7 @@ extension HTTPClient {
         
         switch response.statusCode {
         case 200...299:
-            guard let decodedResponse = try? JSONDecoder().decode(responseModel, from: data) else {
-                throw RequestError.decode
-            }
-            return decodedResponse
+            return data
             
         case 401:
             throw RequestError.unauthorized
@@ -45,5 +43,15 @@ extension HTTPClient {
         default:
             throw RequestError.unknown
         }
+    }
+    
+    public func sendRequest<T: Decodable>(endpoint: Endpoint, decoding responseModel: T.Type) async throws -> T {
+        let requestData = try await sendRequest(endpoint: endpoint)
+        
+        guard let decodedData = JSONParser().parse(data: requestData, from: responseModel) else {
+            throw RequestError.decode
+        }
+        
+        return decodedData
     }
 }
