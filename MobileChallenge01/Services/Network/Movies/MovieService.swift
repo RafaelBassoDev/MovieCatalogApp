@@ -18,7 +18,7 @@ struct MovieService: HTTPClient, MovieServiceable {
     
     private func handleRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) async -> Result<T, RequestError> {
         do {
-            let response = try await sendRequest(endpoint: endpoint, responseModel: responseModel.self)
+            let response = try await sendRequest(endpoint: endpoint, decoding: responseModel)
             return .success(response)
             
         } catch {
