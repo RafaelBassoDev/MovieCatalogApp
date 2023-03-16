@@ -1,9 +1,17 @@
 import Foundation
 import NetworkLayer
 
+enum PosterSize: String {
+    case w45
+    case w300
+    case w500
+    case original
+}
+
 enum MovieEndpoint {
     case popular
     case genres
+    case poster(size: PosterSize = .original, path: String)
 }
 
 extension MovieEndpoint: Endpoint {
@@ -27,16 +35,23 @@ extension MovieEndpoint: Endpoint {
             return "/3/movie/popular"
         case .genres:
             return "/3/genre/movie/list"
+        case .poster(let size, let path):
+            return "/t/p/\(size)/\(path)"
         }
     }
     
-    var query: String {
-        return "api_key=\(acessToken)"
+    var query: String? {
+        switch self {
+        case .popular, .genres:
+            return "api_key=\(acessToken)"
+        case .poster:
+            return nil
+        }
     }
     
     var method: NetworkLayer.HTTPMethod {
         switch self {
-        case .popular, .genres:
+        case .popular, .genres, .poster:
             return .get
         }
     }
