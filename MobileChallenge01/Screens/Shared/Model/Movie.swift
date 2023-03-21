@@ -9,6 +9,7 @@ import UIKit.UIImage
 
 struct Movie {
     let poster: UIImage?
+    let posterPath: String?
     let title: String
     let overview: String
     let releaseDate: String
