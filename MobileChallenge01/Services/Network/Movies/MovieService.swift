@@ -1,32 +1,28 @@
-import Foundation
+import UIKit
 import NetworkLayer
 
 struct MovieService: HTTPClient, MovieServiceable {
-    func getPopular() async -> Result<PopularResponseModel, RequestError> {
+    func getPopular() async -> Result<PopularResponseModel, Error> {
         let endpoint = MovieEndpoint.popular
         let responseModel = PopularResponseModel.self
-        
-        return await handleRequest(endpoint: endpoint, responseModel: responseModel)
+        return await makeRequest(endpoint: endpoint, responseModel: responseModel)
     }
     
-    func getGenres() async -> Result<GenreResponseModel, RequestError> {
+    func getGenres() async -> Result<GenreResponseModel, Error> {
         let endpoint = MovieEndpoint.genres
         let responseModel = GenreResponseModel.self
-        
-        return await handleRequest(endpoint: endpoint, responseModel: responseModel)
+        return await makeRequest(endpoint: endpoint, responseModel: responseModel)
     }
     
-    private func handleRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) async -> Result<T, RequestError> {
+
+extension MovieService {
+    private func makeRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) async -> Result<T, Error> {
         do {
             let response = try await sendRequest(endpoint: endpoint, decoding: responseModel)
             return .success(response)
             
         } catch {
-            if let requestError = error as? RequestError {
-                return .failure(requestError)
-            }
+            return .failure(error)
         }
-        
-        return .failure(.unknown)
     }
 }
