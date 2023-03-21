@@ -26,7 +26,12 @@ extension MovieEndpoint: Endpoint {
     }
     
     var host: String {
-        return "api.themoviedb.org"
+        switch self {
+        case .popular, .genres:
+            return "api.themoviedb.org"
+        case .poster:
+            return "image.tmdb.org"
+        }
     }
     
     var path: String {
@@ -36,7 +41,7 @@ extension MovieEndpoint: Endpoint {
         case .genres:
             return "/3/genre/movie/list"
         case .poster(let size, let path):
-            return "/t/p/\(size)/\(path)"
+            return "/t/p/\(size)\(path)"
         }
     }
     
