@@ -21,10 +21,29 @@ class MovieListViewModel {
     ///
     /// - Parameters:
     ///   - completion: completion handler indicating the function has finished.
-    func getPopularMovies(_ completion: @escaping (Result<[Movie], Error>) -> Void) {
-        Task(priority: .high) {
-            let result = await repository.getPopularMovies()
-            completion(result)
+    func getPopularMovies() async {
+        let result = await repository.getPopularMovies()
+        
+        switch result {
+        case .success(let movies):
+            movieList.createNewList(from: movies)
+            
+        case .failure:
+            break
+        }
+    }
+    
+    func getPosterForAllMovies() async {
+        _ = await withTaskGroup(of: UIImage?.self) { taskGroup in
+            for movie in movieList.allMovies {
+                taskGroup.addTask {
+                    guard let poster = await self.repository.getMoviePoster(for: movie, size: .w300) else {
+                        return nil
+                    }
+                    movie.poster = poster
+                    return poster
+                }
+            }
         }
     }
     
@@ -39,10 +58,6 @@ class MovieListViewModel {
 }
 
 extension MovieListViewModel {
-    
-    func updateMovieList(with movies: [Movie]) {
-        self.movieList = MovieList(movies)
-    }
     
     func getMovieCount() -> Int {
         return movieList.count
