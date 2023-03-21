@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 struct MovieRepository: MovieRepositoreable {
     typealias DataType = Movie
@@ -49,6 +49,7 @@ extension MovieRepository {
             
             let movie = Movie(
                 poster: nil,
+                posterPath: serviceMovie.posterPath,
                 title: serviceMovie.title,
                 overview: serviceMovie.overview,
                 releaseDate: serviceMovie.releaseDate,
