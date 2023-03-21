@@ -28,4 +28,8 @@ extension MovieList {
     var count: Int {
         movies.count
     }
+    
+    var allMovies: [Movie] {
+        movies
+    }
 }
