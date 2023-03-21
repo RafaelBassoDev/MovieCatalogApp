@@ -30,16 +30,17 @@ class MovieListViewController: UIViewController {
         
         view.addSubview(tableViewController.view)
         
-        viewModel.getPopularMovies { result in
-            switch result {
-            case .success(let movies):
-                self.viewModel.updateMovieList(with: movies)
-                DispatchQueue.main.async {
-                    self.tableViewController.reloadData()
-                }
-                
-            case .failure(let error):
-                print("ERROR: \(error)")
+        Task {
+            await viewModel.getPopularMovies()
+            
+            DispatchQueue.main.async {
+                self.tableViewController.reloadData()
+            }
+            
+            await viewModel.getPosterForAllMovies()
+            
+            DispatchQueue.main.async {
+                self.tableViewController.reloadData()
             }
         }
     }
@@ -68,13 +69,13 @@ extension MovieListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        guard let movieModel = viewModel.getMovieData(for: indexPath) else {
+        guard let movieData = viewModel.getMovieData(for: indexPath) else {
             return movieCell
         }
         
-        movieCell.setPoster(movieModel.poster)
-        movieCell.setTitle(movieModel.title)
-        movieCell.setReleaseDate(movieModel.releaseDate)
+        movieCell.setPoster(movieData.poster)
+        movieCell.setTitle(movieData.title)
+        movieCell.setReleaseDate(movieData.releaseDate)
         
         return movieCell
     }
