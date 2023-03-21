@@ -24,7 +24,7 @@ struct MovieRepository: MovieRepositoreable {
         }
     }
     
-    func getMoviePoster(movie: Movie, size: PosterSize = .original) async -> UIImage? {
+    func getMoviePoster(for movie: Movie, size: PosterSize) async -> UIImage? {
         guard let posterPath = movie.posterPath else {
             return nil
         }
@@ -64,6 +64,7 @@ extension MovieRepository {
             let associatedGenres = genres.filter { serviceMovie.genreIDS.contains($0.id) }
             
             let movie = Movie(
+                id: serviceMovie.id,
                 poster: nil,
                 posterPath: serviceMovie.posterPath,
                 title: serviceMovie.title,
