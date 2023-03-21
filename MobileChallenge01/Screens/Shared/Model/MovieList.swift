@@ -5,10 +5,10 @@
 //  Created by Rafael Basso on 07/02/23.
 //
 
-import Foundation
+import UIKit.UIImage
 
-struct MovieList {
-    private let movies: [Movie]
+class MovieList {
+    private var movies: [Movie]
     
     init(_ movies: [Movie]) {
         self.movies = movies
@@ -21,6 +21,11 @@ extension MovieList {
         if index > (count - 1) { return nil }
         
         return self.movies[index]
+    }
+    
+    func createNewList(from movieArray: [Movie]) {
+        self.movies.removeAll()
+        self.movies = movieArray
     }
 }
 
