@@ -23,6 +23,22 @@ struct MovieRepository: MovieRepositoreable {
             return .failure(error)
         }
     }
+    
+    func getMoviePoster(movie: Movie, size: PosterSize = .original) async -> UIImage? {
+        guard let posterPath = movie.posterPath else {
+            return nil
+        }
+        
+        let response = await service.getPoster(filePath: posterPath, size: size)
+        
+        switch response {
+        case .success(let poster):
+            return poster
+            
+        case .failure:
+            return nil
+        }
+    }
 }
 
 extension MovieRepository {
