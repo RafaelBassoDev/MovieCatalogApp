@@ -70,7 +70,7 @@ extension MovieRepository {
                 title: serviceMovie.title,
                 overview: serviceMovie.overview,
                 releaseDate: serviceMovie.releaseDate,
-                popularity: serviceMovie.popularity,
+                popularity: serviceMovie.voteAverage,
                 genres: associatedGenres.map { $0.name }
             )
             
