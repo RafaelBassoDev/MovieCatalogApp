@@ -42,4 +42,8 @@ final class Coordinator {
         
         navigationController.pushViewController(viewController, animated: true)
     }
+    
+    func pop() {
+        navigationController.popViewController(animated: true)
+    }
 }
