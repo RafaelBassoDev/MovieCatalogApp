@@ -20,9 +20,9 @@ extension UINavigationBar {
         let defaultAppearance = UINavigationBarAppearance()
         
         defaultAppearance.configureWithTransparentBackground()
-        defaultAppearance.backgroundColor = .systemGray6
+        defaultAppearance.backgroundColor = .black
         defaultAppearance.titleTextAttributes = [
-            .foregroundColor: UIColor.black,
+            .foregroundColor: UIColor.white,
             .font: UIFont.systemFont(ofSize: 22, weight: .bold)
         ]
         
@@ -34,9 +34,9 @@ extension UINavigationBar {
         let scrollAppearance = UINavigationBarAppearance()
         
         scrollAppearance.configureWithOpaqueBackground()
-        scrollAppearance.backgroundColor = .white
+        scrollAppearance.backgroundColor = .black
         scrollAppearance.titleTextAttributes = [
-            .foregroundColor: UIColor.black,
+            .foregroundColor: UIColor.white,
             .font: UIFont.systemFont(ofSize: 22, weight: .bold)
         ]
         
