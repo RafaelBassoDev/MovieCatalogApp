@@ -1,30 +1,32 @@
 import Foundation
 
 struct MovieResponseModel: Codable {
-    let posterPath: String
     let adult: Bool
-    let overview, releaseDate: String
+    let backdropPath: String?
     let genreIDS: [Int]
     let id: Int
-    let originalTitle: String
-    let title, backdropPath: String
+    let originalLanguage: String
+    let originalTitle, overview: String
     let popularity: Double
-    let voteCount: Int
+    let posterPath: String
+    let releaseDate: String?
+    let title: String
     let video: Bool
     let voteAverage: Double
+    let voteCount: Int
 
     enum CodingKeys: String, CodingKey {
-        case posterPath = "poster_path"
-        case adult, overview
-        case releaseDate = "release_date"
+        case adult
+        case backdropPath = "backdrop_path"
         case genreIDS = "genre_ids"
         case id
+        case originalLanguage = "original_language"
         case originalTitle = "original_title"
-        case title
-        case backdropPath = "backdrop_path"
-        case popularity
-        case voteCount = "vote_count"
-        case video
+        case overview, popularity
+        case posterPath = "poster_path"
+        case releaseDate = "release_date"
+        case title, video
         case voteAverage = "vote_average"
+        case voteCount = "vote_count"
     }
 }

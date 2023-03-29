@@ -69,7 +69,7 @@ extension MovieRepository {
                 posterPath: serviceMovie.posterPath,
                 title: serviceMovie.title,
                 overview: serviceMovie.overview,
-                releaseDate: serviceMovie.releaseDate,
+                releaseDate: serviceMovie.releaseDate ?? "",
                 popularity: serviceMovie.voteAverage,
                 genres: associatedGenres.map { $0.name }
             )
